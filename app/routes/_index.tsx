@@ -2,7 +2,7 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Sustainable Slurp" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <main>
-      <p className="text-4xl font-bold"></p>
+      <p className="text-4xl font-bold">Bruh</p>
     </main>
   );
 }

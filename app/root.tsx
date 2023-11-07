@@ -11,6 +11,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "stylesheet", href: stylesheet },
@@ -22,23 +23,25 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="manifest" href="/pwa/manifest.json"></link>
+        <link rel="manifest" href="/manifest.json"></link>
         <Meta />
         <Links />
       </head>
       <body>
-        <nav>
-          <div className="flex justify-between m-5 text-2xl">
-            <h1 ><NavLink to="/">Sustainable Slurp</NavLink></h1>
-            <div className="flex gap-5">
-              <h1><NavLink to="">Link 1</NavLink></h1>
-              <h1><NavLink to="">Link 2</NavLink></h1>
-            </div>
+        <nav className="flex justify-between text-2xl bg-gray-500 p-5">
+          <h1 ><NavLink to="/">Sustainable Slurp</NavLink></h1>
+          <div>
+            {/* Burger menu here */}
           </div>
         </nav>
         <Outlet />
-        <footer>
-
+        <footer className="flex justify-between bg-gray-500 p-5">
+          <h5>Logo</h5>
+          <div>
+            <h5>T</h5>
+            <h5>T</h5>
+          </div>
+          
         </footer>
         <ScrollRestoration />
         <Scripts />
