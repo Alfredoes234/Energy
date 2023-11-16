@@ -9,9 +9,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import Header from "./components/header";
 import Footer from "./components/footer";
-
+import Nav from "./components/nav";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -29,7 +28,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Header />
+        <Nav />
         <Outlet />
         <Footer />
         <ScrollRestoration />
