@@ -18,12 +18,12 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
 export default function LogoutRoute() {
   return (
-    <>
+    <main>
       <p>Are you sure you want to log out?</p>
       <Form method="post">
         <button type="submit">Logout</button>
       </Form>
       <Link to="/">Never mind</Link>
-    </>
+    </main>
   );
 }

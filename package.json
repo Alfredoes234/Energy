@@ -9,7 +9,8 @@
     "start": "remix-serve ./build/index.js",
     "typecheck": "tsc",
     "format": "exec prettier . --write",
-    "check": "prettier . --check"
+    "check": "prettier . --check",
+    "eslint": "eslint ."
   },
   "dependencies": {
     "@noble/hashes": "^1.3.2",
