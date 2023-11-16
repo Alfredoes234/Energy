@@ -9,8 +9,9 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <main>
+    <main className="m-5">
       <p className="text-4xl font-bold">Bruh</p>
+      <textarea className="resize-none border rounded border-black" rows={10} cols={75}></textarea>
     </main>
   );
 }

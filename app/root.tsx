@@ -5,11 +5,12 @@ import {
   Links,
   LiveReload,
   Meta,
-  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 
 export const links: LinksFunction = () => [
@@ -28,21 +29,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <nav className="flex justify-between text-2xl bg-gray-500 p-5">
-          <h1 ><NavLink to="/">Sustainable Slurp</NavLink></h1>
-          <div>
-            {/* Burger menu here */}
-          </div>
-        </nav>
+        <Header />
         <Outlet />
-        <footer className="flex justify-between bg-gray-500 p-5">
-          <h5>Logo</h5>
-          <div>
-            <h5>T</h5>
-            <h5>T</h5>
-          </div>
-          
-        </footer>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
