@@ -38,7 +38,6 @@ async function Verify(password: string, verify: string) {
   } catch (e: any) {
     return false;
   }
-
 }
 
 export { Hash, Verify };

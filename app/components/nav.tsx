@@ -3,13 +3,13 @@ import { NavLink } from "@remix-run/react";
 export default function Nav() {
   return (
     <nav className="flex justify-between sticky top-0 text-2xl  bg-gray-500 p-5 w-auto">
-      <h1 className="sm:text-base">
+      <h1>
         <NavLink to="/" prefetch="intent">
           Sustainable Slurp
         </NavLink>
       </h1>
       <div className="flex gap-5">
-        {/* Burger menu here */}
+        {/* menu right, here */}
         <NavLink to={"/login"} prefetch="intent">
           <h2>Login</h2>
         </NavLink>
