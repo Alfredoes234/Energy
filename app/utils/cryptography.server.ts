@@ -19,21 +19,26 @@ async function Hash(password: Uint8Array | string) {
 }
 
 async function Verify(password: string, verify: string) {
-  const [salt, key] = verify.split(":");
-  const hashedBuffer = await scryptAsync(password, salt, {
-    N: 2 ** 16,
-    r: 8,
-    p: 1,
-    dkLen: 32,
-    maxmem: 2 ** 32 + 128 * 8 * 1, // N * r * p * 128 + (128*r*p)
-  });
-  const keyBuffer = Buffer.from(key, "hex");
-  const match = timingSafeEqual(hashedBuffer, keyBuffer);
-  if (match) {
-    return true;
-  } else {
+  try {
+    const [salt, key] = verify.split(":");
+    const hashedBuffer = await scryptAsync(password, salt, {
+      N: 2 ** 16,
+      r: 8,
+      p: 1,
+      dkLen: 32,
+      maxmem: 2 ** 32 + 128 * 8 * 1, // N * r * p * 128 + (128*r*p)
+    });
+    const keyBuffer = Buffer.from(key, "hex");
+    const match = timingSafeEqual(hashedBuffer, keyBuffer);
+    if (match) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (e: any) {
     return false;
   }
+
 }
 
 export { Hash, Verify };
