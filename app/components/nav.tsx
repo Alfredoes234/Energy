@@ -2,8 +2,8 @@ import { NavLink } from "@remix-run/react";
 
 export default function Nav() {
   return (
-    <nav className="flex justify-between text-2xl bg-gray-500 p-5">
-      <h1>
+    <nav className="flex justify-between sticky top-0 text-2xl  bg-gray-500 p-5 w-auto">
+      <h1 className="sm:text-base">
         <NavLink to="/" prefetch="intent">
           Sustainable Slurp
         </NavLink>

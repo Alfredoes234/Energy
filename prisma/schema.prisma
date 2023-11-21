@@ -8,13 +8,24 @@ datasource db {
 }
 
 model user {
-  id   Int   @id @default(autoincrement())
-  name String?
-  email String @unique
-  password String
-  role Role @default(USER)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        Int        @id @default(autoincrement())
+  name      String?
+  email     String     @unique
+  password  String
+  role      Role       @default(USER)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  products  products[]
+}
+
+model products {
+  id          Int      @id @default(autoincrement())
+  productid   Int
+  seller      user     @relation(fields: [productid], references: [id])
+  name        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 enum Role {
