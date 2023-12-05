@@ -4,3 +4,7 @@ node_modules
 /build
 /public/build
 .env
+
+# Rust backend stuff
+/backend/target
+/backend/Cargo.lock
