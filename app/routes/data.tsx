@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
 
 
 export const loader = async () => {
-    const response = await fetch("http://localhost:8080/json");
+    const response = await fetch("http://[::1]:8080/json");
     const data = await response.json();
     return data;
 };
